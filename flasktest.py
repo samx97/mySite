@@ -25,4 +25,4 @@ def prediction():
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP', '0.0.0.0'),
-            port=int(os.getenv('PORT', 8887)), debug=True)
+            port=int(os.getenv('PORT', 7777)), debug=True)
