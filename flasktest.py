@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import os
 app = Flask(__name__)
 
@@ -10,6 +10,20 @@ def hello():
 @app.route('/series')
 def series():
     return render_template('series.html')
+
+@app.route('/blogs')
+def blogs():
+    return "Hello this is my blog"
+
+@app.route('/doodleAI', methods=['GET', 'POST'])
+def doodle():
+    return render_template("predict.html")
+
+
+@app.route('/predict', methods=['GET','POST'])
+def prediction():
+    img_data = request.get_data()
+    return "7"
 
 
 if __name__ == '__main__':
